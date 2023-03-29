@@ -1,9 +1,6 @@
 // 状态管理
-import { makeAutoObservable } from 'mobx';
-class Store {
-  constructor() {
-    makeAutoObservable(this);
-  }
-}
+import { UserStore } from './userStore';
 
-export default new Store();
+export const stores = {
+  userStore: new UserStore(),
+};
