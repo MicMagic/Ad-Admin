@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
+import { Provider } from 'mobx-react';
 import { ConfigProvider } from 'antd';
 import dayjs from 'dayjs';
-import 'dayjs/locale/zh-cn';
 import zhCN from 'antd/locale/zh_CN';
+import App from './App';
+import Store from './store/index';
 import 'antd/dist/reset.css';
 import './index.scss';
-import App from './App';
+import 'dayjs/locale/zh-cn';
 
 dayjs.locale('zh-cn');
 
@@ -17,9 +19,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ConfigProvider locale={zhCN}>
-      <HashRouter>
-        <App />
-      </HashRouter>
+      <Provider {...Store}>
+        <HashRouter>
+          <App />
+        </HashRouter>
+      </Provider>
     </ConfigProvider>
   </React.StrictMode>
 );
