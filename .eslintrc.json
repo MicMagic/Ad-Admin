@@ -20,21 +20,23 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "indent": [
-            "error",
-            "tab"
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ]
+        "no-multi-spaces": "error",
+        "indent": ["error", 2, { "SwitchCase": 1 }],
+        "object-curly-spacing": ["error", "always"],
+        "space-in-parens": ["error", "never"],
+        "key-spacing": ["error", { "mode": "strict" }],
+        "comma-spacing": ["error", { "before": false, "after": true }],
+        "array-bracket-spacing": ["error", "always"],
+        "func-call-spacing": ["error", "never"],
+        "space-before-function-paren": ["error", "never"],
+        "no-whitespace-before-property": "error",
+        "semi-spacing": ["error", { "before": false, "after": false }],
+        "space-infix-ops": "error",
+        "arrow-spacing": ["error", { "before": true, "after": true }],
+        "rest-spread-spacing": "error",
+        "no-duplicate-imports": "error",
+        "spaced-comment": ["error", "always"],
+        "quotes": ["error", "single", { "avoidEscape": true }],
+        "semi": ["error","always"]
     }
 }
