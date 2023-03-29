@@ -1,19 +1,14 @@
 import React from 'react';
-import logo from './assets/svg/logo.svg';
-import { HashRouter } from 'react-router-dom';
-import Routers from './router';
+import routers from './router';
+import { useRoutes } from 'react-router-dom';
 import './App.scss';
 
 function App() {
+  const routerElement = useRoutes(routers);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <HashRouter>
-          <Routers />
-        </HashRouter>
-      </header>
-    </div>
+    <>
+      {routerElement}
+    </>
   );
 }
 
