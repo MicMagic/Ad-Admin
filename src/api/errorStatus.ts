@@ -18,6 +18,9 @@ export const handleErrStatus = (errStatus: number): string => {
       case 500:
         errorMessage = '服务器端出错';
         break;
+      case 503:
+        errorMessage = '服务不可用';
+        break;
     }
   } else {
     errorMessage = '无法连接到服务器';
