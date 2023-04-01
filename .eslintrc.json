@@ -35,7 +35,6 @@
         "arrow-spacing": ["error", { "before": true, "after": true }],
         "rest-spread-spacing": "error",
         "no-duplicate-imports": "error",
-        "spaced-comment": ["error", "always"],
         "quotes": ["error", "single", { "avoidEscape": true }],
         "semi": ["error","always"]
     }
