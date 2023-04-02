@@ -25,6 +25,7 @@
     "typescript": "^4.9.5"
   },
   "devDependencies": {
+    "@types/customize-cra": "^1.0.4",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.1",
     "customize-cra": "^1.0.0",
