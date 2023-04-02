@@ -4,7 +4,7 @@ const api = {
   login: ''
 };
 
-export const login = (params: any) => {
+export const login = (params: string) => {
   return http({
     url: api.login,
     method: 'GET',
