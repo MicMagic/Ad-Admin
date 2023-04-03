@@ -36,7 +36,7 @@ const HomePage = (): JSX.Element => {
   return (
     <div className='homepage-wrapper'>
       <Layout>
-        <Space align="start">
+        <Space align="start" size={16}>
           <Sider className='homepage-sider'>
             <div className='homepage-logo'>
               <img src={Logo} alt="logo" />
