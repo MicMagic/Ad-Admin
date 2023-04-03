@@ -3,4 +3,35 @@
     height: 100%;
     padding: 16px 16px 16px 0px;
     box-sizing: border-box;
+    background-color: #F3F6FB;
+    color: #061e26;
+    font-weight: 500;
+    font-size: 16px;
+    .ant-layout {
+        background-color: #F3F6FB;
+    }
+    .homepage-sider {
+        background-color: #fff;
+        border-radius: 0 8px 8px 0;
+        box-shadow: 0 0 8px 0 #e0e6f4;
+        .homepage-logo {
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 16px;
+            border-bottom: 1px solid #f1f2f7;
+            img {
+                width: 32px;
+                height: 32px;
+                margin-right: 8px;
+            }
+        }
+    }
+    .homepage-header {
+        background-color: #fff;
+        border-radius: 0 8px 8px 0;
+        box-shadow: 0 0 8px 0 #e0e6f4;
+    }
 }
