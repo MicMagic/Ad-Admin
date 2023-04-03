@@ -7,7 +7,40 @@ const routers: RouteObject[] = [
   {
     path: '/homepage',
     element: <HomePage />,
-    children: []
+    children: [
+      {
+        path: 'dashboard',
+        element: ''
+      },
+      {
+        path: 'selection',
+        element: ''
+      },
+      {
+        path: 'adPlatform',
+        element: ''
+      },
+      {
+        path: 'buryPoint',
+        element: ''
+      },
+      {
+        path: 'package',
+        element: ''
+      },
+      {
+        path: 'userPortrait',
+        element: ''
+      },
+      {
+        path: 'alternative',
+        element: ''
+      },
+      {
+        path: 'autoTest',
+        element: ''
+      }
+    ]
   },
   // 重定向路由
   {

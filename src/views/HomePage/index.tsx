@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout, Space, Menu, MenuProps } from 'antd';
+import { Link, Outlet } from 'react-router-dom';
 import { MailOutlined } from '@ant-design/icons';
 import Logo from '../../assets/img/logo.png';
 import './index.scss';
@@ -23,14 +24,14 @@ const HomePage = (): JSX.Element => {
   };
   // 配置路由菜单导航
   const items: MenuProps['items'] = [
-    getItem('dashboard', '1', <MailOutlined />),
-    getItem('选品管理', '2', <MailOutlined />),
-    getItem('广告管理', '3', <MailOutlined />),
-    getItem('埋点管理', '4', <MailOutlined />),
-    getItem('包管理', '5', <MailOutlined />),
-    getItem('用户画像', '6', <MailOutlined />),
-    getItem('备选产品', '7', <MailOutlined />),
-    getItem('自动化测试', '8', <MailOutlined />),
+    getItem(<Link to="dashboard">dashboard</Link>, '1', <MailOutlined />),
+    getItem(<Link to="selection">选品管理</Link>, '2', <MailOutlined />),
+    getItem(<Link to="adPlatform">广告平台</Link>, '3', <MailOutlined />),
+    getItem(<Link to="buryPoint">埋点管理</Link>, '4', <MailOutlined />),
+    getItem(<Link to="package">包管理</Link>, '5', <MailOutlined />),
+    getItem(<Link to="userPortrait">用户画像</Link>, '6', <MailOutlined />),
+    getItem(<Link to="alternative">备选产品</Link>, '7', <MailOutlined />),
+    getItem(<Link to="autoTest">自动化测试</Link>, '8', <MailOutlined />),
   ];
   return (
     <div className='homepage-wrapper'>
@@ -50,7 +51,9 @@ const HomePage = (): JSX.Element => {
           <Layout>
             <Space direction="vertical">
               <Header className='homepage-header'>header</Header>
-              <Content>content</Content>
+              <Content>
+                <Outlet />
+              </Content>
             </Space>
           </Layout>
         </Space>
