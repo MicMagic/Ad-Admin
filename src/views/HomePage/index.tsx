@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Space, Menu, MenuProps, Button } from 'antd';
+import { Layout, Space, Menu, MenuProps } from 'antd';
 import { Link, Outlet } from 'react-router-dom';
 import { MailOutlined } from '@ant-design/icons';
 import SvgIcon from '@components/SvgIcon/index';
@@ -39,7 +39,7 @@ const HomePage = (): JSX.Element => {
         <Space align="start" size={16}>
           <Sider className='homepage-sider'>
             <div className='homepage-logo'>
-              <SvgIcon iconName="ad" />
+              <SvgIcon iconName="logo" />
               <span>Ad-Admin</span>
             </div>
             <Menu
@@ -51,7 +51,6 @@ const HomePage = (): JSX.Element => {
           <Layout>
             <Space direction="vertical">
               <Header className='homepage-header'>
-                <Button icon={<SvgIcon iconName="ad" />}></Button>
               </Header>
               <Content>
                 <Outlet />

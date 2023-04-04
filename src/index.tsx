@@ -7,6 +7,7 @@ import zhCN from 'antd/locale/zh_CN';
 import App from './App';
 import 'antd/dist/reset.css';
 import './index.scss';
+import '@assets/svg';
 import 'dayjs/locale/zh-cn';
 
 dayjs.locale('zh-cn');
