@@ -1,5 +1,17 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@src/*": ["./src/*"],
+      "@api/*": ["./src/api/*"],
+      "@assets/*":[ "./src/assets/*"],
+      "@components/*":[ "./src/components/*"],
+      "@constant/*": ["./src/constant/*"],
+      "@router/*": ["./src/router/*"],
+      "@store/*": ["./src/store/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@views/*": ["./src/views/*"],
+    },
     "target": "es5",
     "lib": [
       "dom",
@@ -22,5 +34,6 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "exclude": ["./node_modules"]
 }
