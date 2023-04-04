@@ -1,0 +1,3 @@
+# eslint忽略校验
+node_modules
+craco.config.js
