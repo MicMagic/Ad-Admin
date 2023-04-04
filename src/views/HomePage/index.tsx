@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout, Space, Menu, MenuProps } from 'antd';
 import { Link, Outlet } from 'react-router-dom';
 import { MailOutlined } from '@ant-design/icons';
-import Logo from '../../assets/img/logo.png';
+import SvgIcon from '@components/SvgIcon/index';
 import './index.scss';
 
 const { Header, Sider, Content } = Layout;
@@ -39,7 +39,7 @@ const HomePage = (): JSX.Element => {
         <Space align="start" size={16}>
           <Sider className='homepage-sider'>
             <div className='homepage-logo'>
-              <img src={Logo} alt="logo" />
+              <SvgIcon iconName="logo" />
               <span>Ad-Admin</span>
             </div>
             <Menu
@@ -50,7 +50,8 @@ const HomePage = (): JSX.Element => {
           </Sider>
           <Layout>
             <Space direction="vertical">
-              <Header className='homepage-header'>header</Header>
+              <Header className='homepage-header'>
+              </Header>
               <Content>
                 <Outlet />
               </Content>
