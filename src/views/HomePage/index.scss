@@ -1,7 +1,7 @@
 .homepage-wrapper {
     width: 100%;
     height: 100%;
-    padding: 16px 16px 0px 0px;
+    padding-top: 16px;
     box-sizing: border-box;
     background-color: #F3F6FB;
     color: #061e26;
@@ -32,9 +32,11 @@
         }
     }
     .homepage-header {
+        width: calc(100vw - 232px);
         height: 60px;
         background-color: #fff;
         border-radius: 8px;
         box-shadow: 0 0 8px 0 #e0e6f4;
+        padding: 0px 16px;
     }
 }
