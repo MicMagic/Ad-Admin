@@ -20,6 +20,7 @@ const MainHeader = (): JSX.Element => {
         </div>
       </div>
     </div>
+    
   );
 };
 
