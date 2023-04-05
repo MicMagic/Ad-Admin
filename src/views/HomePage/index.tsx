@@ -1,7 +1,6 @@
 import React from 'react';
 import { Layout, Space, Menu, MenuProps } from 'antd';
 import { Link, Outlet } from 'react-router-dom';
-import { MailOutlined } from '@ant-design/icons';
 import SvgIcon from '@components/SvgIcon/index';
 import MainHeader from '@components/MainHeader';
 import './index.scss';
@@ -25,14 +24,14 @@ const HomePage = (): JSX.Element => {
   };
   // 配置路由菜单导航
   const items: MenuProps['items'] = [
-    getItem(<Link to="dashboard">dashboard</Link>, '1', <MailOutlined />),
-    getItem(<Link to="selection">选品管理</Link>, '2', <MailOutlined />),
-    getItem(<Link to="adPlatform">广告平台</Link>, '3', <MailOutlined />),
-    getItem(<Link to="buryPoint">埋点管理</Link>, '4', <MailOutlined />),
-    getItem(<Link to="package">包管理</Link>, '5', <MailOutlined />),
-    getItem(<Link to="userPortrait">用户画像</Link>, '6', <MailOutlined />),
-    getItem(<Link to="alternative">备选产品</Link>, '7', <MailOutlined />),
-    getItem(<Link to="autoTest">自动化测试</Link>, '8', <MailOutlined />),
+    getItem(<Link to="dashboard">dashboard</Link>, '1', <SvgIcon iconName='dashboard' />),
+    getItem(<Link to="selection">选品管理</Link>, '2', <SvgIcon iconName='selection' />),
+    getItem(<Link to="adPlatform">广告平台</Link>, '3', <SvgIcon iconName='adPlatform' />),
+    getItem(<Link to="buryPoint">埋点管理</Link>, '4', <SvgIcon iconName='buryPoint' />),
+    getItem(<Link to="package">包管理</Link>, '5', <SvgIcon iconName='package' />),
+    getItem(<Link to="userPortrait">用户画像</Link>, '6', <SvgIcon iconName='userPortrait' />),
+    getItem(<Link to="alternative">备选产品</Link>, '7', <SvgIcon iconName='alternative' />),
+    getItem(<Link to="autoTest">自动化测试</Link>, '8', <SvgIcon iconName='autoTest' />),
   ];
   return (
     <div className='homepage-wrapper'>
