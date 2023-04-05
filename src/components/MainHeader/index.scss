@@ -6,19 +6,55 @@
     justify-content: space-between;
     .header-left {
         display: flex;
+        align-items: center;
         justify-content: center;
         .sider-toggle {
-
+            width: 40px;
+            height: 40px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #eef2f9;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #898d99;
+            margin-right: 15px;
+            &:hover {
+                color: #061e26;
+            }
         }
         .header-breadcrumb {
-
+            margin-left: 20px;
         }
     }
     .header-right {
         display: flex;
         justify-content: center;
         .right-btn {
-
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+            .refresh {
+                width: 40px;
+                height: 40px;
+                padding: 10px;
+                border-radius: 8px;
+                background-color: #eef2f9;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #898d99;
+                &:hover {
+                    color: #061e26;
+                }
+            }
+        }
+        .right-operation {
+            cursor: pointer;
+            margin-left: 20px;
         }
     }
 }

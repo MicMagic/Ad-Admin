@@ -7,20 +7,22 @@ const MainHeader = (): JSX.Element => {
     <div className='header-wrapper'>
       <div className='header-left'>
         <div className='sider-toggle'>
-          <SvgIcon iconName=''/>
+          <SvgIcon iconName='siderToggle' />
         </div>
-        <div className='header-breadcrumb'></div>
+        <div className='header-breadcrumb'>面包屑</div>
       </div>
       <div className='header-right'>
         <div className='right-btn'>
-          <SvgIcon iconName=''/>
+          <div className='refresh'>
+            <SvgIcon iconName='refresh' />
+          </div>
         </div>
-        <div>
+        <div className='right-operation'>
           <span>退出登录</span>
         </div>
       </div>
     </div>
-    
+
   );
 };
 
