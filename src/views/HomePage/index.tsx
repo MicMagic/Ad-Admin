@@ -3,6 +3,7 @@ import { Layout, Space, Menu, MenuProps } from 'antd';
 import { Link, Outlet } from 'react-router-dom';
 import { MailOutlined } from '@ant-design/icons';
 import SvgIcon from '@components/SvgIcon/index';
+import MainHeader from '@components/MainHeader';
 import './index.scss';
 
 const { Header, Sider, Content } = Layout;
@@ -51,6 +52,7 @@ const HomePage = (): JSX.Element => {
           <Layout>
             <Space direction="vertical">
               <Header className='homepage-header'>
+                <MainHeader />
               </Header>
               <Content>
                 <Outlet />
