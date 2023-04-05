@@ -1,12 +1,18 @@
 import React from 'react';
 import SvgIcon from '../SvgIcon';
+import useStore from '@src/store';
 import './index.scss';
 
 const MainHeader = (): JSX.Element => {
+  const { commonStore } = useStore();
+  // menu切换
+  const handleToggle = () => {
+    commonStore.menuToggle();
+  };
   return (
     <div className='header-wrapper'>
       <div className='header-left'>
-        <div className='sider-toggle'>
+        <div className='sider-toggle' onClick={handleToggle}>
           <SvgIcon iconName='siderToggle' />
         </div>
         <div className='header-breadcrumb'>面包屑</div>
@@ -22,7 +28,6 @@ const MainHeader = (): JSX.Element => {
         </div>
       </div>
     </div>
-
   );
 };
 

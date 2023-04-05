@@ -1,12 +1,16 @@
 import React from 'react';
 import { Layout, Space, Menu, MenuProps } from 'antd';
+import { observer } from 'mobx-react';
 import { Link, Outlet } from 'react-router-dom';
 import SvgIcon from '@components/SvgIcon/index';
 import MainHeader from '@components/MainHeader';
+import useStore from '@src/store';
 import './index.scss';
 
 const { Header, Sider, Content } = Layout;
 const HomePage = (): JSX.Element => {
+  const { commonStore } = useStore();
+  const { menuCollapsed } = commonStore;
   // 菜单item类型别名
   type MenuItem = Required<MenuProps>['items'][number];
   const getItem = (
@@ -37,10 +41,10 @@ const HomePage = (): JSX.Element => {
     <div className='homepage-wrapper'>
       <Layout>
         <Space align="start" size={16}>
-          <Sider className='homepage-sider'>
+          <Sider className='homepage-sider' trigger={null} collapsible collapsed={menuCollapsed}>
             <div className='homepage-logo'>
               <SvgIcon iconName="logo" />
-              <span>Ad-Admin</span>
+              {!menuCollapsed ? <span className='project-title'>Ad-Admin</span> : null}
             </div>
             <Menu
               mode="inline"
@@ -64,4 +68,4 @@ const HomePage = (): JSX.Element => {
   );
 };
 
-export default HomePage;
+export default observer(HomePage);
