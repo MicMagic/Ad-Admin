@@ -1,8 +1,9 @@
 // 状态管理
-import userStore from './userStore';
+import commonStore from './commonStore';
 import { createContext, useContext } from 'react';
+
 const stores = {
-  userStore,
+  commonStore,
 };
 
 // 创建context对象，用于跨级组件通信
