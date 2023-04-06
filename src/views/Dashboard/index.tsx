@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Progress } from 'antd';
 import './index.scss';
 
 export default function Dashboard() {
@@ -15,7 +15,9 @@ export default function Dashboard() {
             </div>
             <div>昨日注册:40人</div>
           </div>
-          <div>1</div>
+          <div>
+            <Progress type="circle" strokeColor="#c91c4f" strokeWidth={12} size={70} percent={42} />
+          </div>
         </Col>
         <Col className='card-item'>
           <div className='card-info'>
@@ -26,7 +28,9 @@ export default function Dashboard() {
             </div>
             <div>昨日DAU:400</div>
           </div>
-          <div>2</div>
+          <div>
+            <Progress type="circle" strokeColor="#4c9332" strokeWidth={12} size={70} percent={42} />
+          </div>
         </Col>
         <Col className='card-item'>
           <div className='card-info'>
@@ -37,7 +41,9 @@ export default function Dashboard() {
             </div>
             <div>昨日收益:40</div>
           </div>
-          <div>3</div>
+          <div>
+            <Progress type="circle" strokeColor="#c91c4f" strokeWidth={12} size={70} percent={42} />
+          </div>
         </Col>
         <Col className='card-item'>
           <div className='card-info'>
@@ -48,7 +54,9 @@ export default function Dashboard() {
             </div>
             <div>昨日注册:30人</div>
           </div>
-          <div>4</div>
+          <div>
+            <Progress type="circle" strokeColor="#4c9332" strokeWidth={12} size={70} percent={42} />
+          </div>
         </Col>
       </Row>
       <div>
