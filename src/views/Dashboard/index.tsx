@@ -59,9 +59,15 @@ export default function Dashboard() {
           </div>
         </Col>
       </Row>
-      <div>
-        <div>App月度注册统计表</div>
-        <div>小程序月度注册统计表</div>
+      <div className='dashborad-chart'>
+        <Row justify="space-between">
+          <Col className='chart-item'>
+            <div></div>
+          </Col>
+          <Col className='chart-item'>
+            <div></div>
+          </Col>
+        </Row>
       </div>
       <div>
         <div>广告数据表格</div>

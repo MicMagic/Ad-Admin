@@ -3,7 +3,7 @@
     height: 100%;
     margin-top: 8px;
     .card-item {
-        width: 400px;
+        width: 410px;
         min-height: 100px;
         max-width: 25%;
         padding: 16px;
@@ -47,6 +47,17 @@
                     background-color: rgba(250,34,86,.2);
                 }
             }
+        }
+    }
+    .dashborad-chart {
+        margin-top: 16px;
+        .chart-item {
+            width: calc(50% - 8px);
+            height: 280px;
+            padding: 16px;
+            box-shadow: 0 0 8px 0 #e0e6f4;
+            background-color: #fff;
+            border-radius: 8px;
         }
     }
 }
