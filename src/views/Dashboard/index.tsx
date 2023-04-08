@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import * as echarts from 'echarts/core';
 import { LineChart, LineSeriesOption } from 'echarts/charts';
-import { GridComponent, GridComponentOption } from 'echarts/components';
+import { GridComponent, TitleComponent, TitleComponentOption, GridComponentOption, TooltipComponent, TooltipComponentOption } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
 import { Row, Col, Progress } from 'antd';
 import './index.scss';
 
-type EchartsOption = echarts.ComposeOption<GridComponentOption | LineSeriesOption>
+type EchartsOption = echarts.ComposeOption<TitleComponentOption | GridComponentOption | LineSeriesOption | TooltipComponentOption>
 export default function Dashboard() {
   // 注册组件
   echarts.use([
@@ -15,20 +15,46 @@ export default function Dashboard() {
     LineChart,
     LabelLayout,
     UniversalTransition,
-    CanvasRenderer
+    CanvasRenderer,
+    TooltipComponent,
+    TitleComponent
   ]);
   useEffect(() => {
     const appChartDom = document.getElementById('appChart')!;
     const appletDom = document.getElementById('appletChart')!;
     const appChart = echarts.init(appChartDom);
     const appletChart = echarts.init(appletDom);
-    const option: EchartsOption = {
+    const commonOption: EchartsOption = {
+      grid: {
+        left: '4%',
+        right: '0%',
+        bottom: '10%'
+      },
       xAxis: {
         type: 'category',
-        data: [ 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun' ]
+        data: [ '1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月' ]
       },
       yAxis: {
-        type: 'value'
+        name: '人数',
+        type: 'value',
+        axisLine: {
+          lineStyle: {
+            color: '#000'
+          }
+        }
+      },
+      tooltip: {
+        trigger: 'axis'
+      }
+    };
+    const appOption: EchartsOption = {
+      title: {
+        text: 'App月度注册用户统计',
+        textStyle: {
+          fontSize: '16',
+          fontWeight: 'bold'
+        },
+        left: 'center'
       },
       series: [
         {
@@ -37,8 +63,24 @@ export default function Dashboard() {
         }
       ]
     };
-    appChart.setOption(option);
-    appletChart.setOption(option);
+    const appletOption: EchartsOption = {
+      title: {
+        text: '小程序月度注册用户统计',
+        textStyle: {
+          fontSize: '16',
+          fontWeight: 'bold'
+        },
+        left: 'center'
+      },
+      series: [
+        {
+          data: [ 150, 230, 224, 218, 135, 147, 260 ],
+          type: 'line'
+        }
+      ]
+    };
+    appChart.setOption(Object.assign({}, commonOption, appOption));
+    appletChart.setOption(Object.assign({}, commonOption, appletOption));
   }, []);
   return (
     <div className='dashboard-wrapper'>
