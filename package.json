@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@craco/craco": "^7.1.0",
+    "@types/echarts": "^4.9.16",
     "@types/webpack-env": "^1.18.0",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.1",
