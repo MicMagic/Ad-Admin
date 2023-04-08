@@ -58,6 +58,38 @@
             box-shadow: 0 0 8px 0 #e0e6f4;
             background-color: #fff;
             border-radius: 8px;
+            #appChart, #appletChart {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .dashborad-table {
+        width: calc(75% - 8px);
+        height: 420px;
+        margin-top: 16px;
+        padding: 16px;
+        box-shadow: 0 0 8px 0 #e0e6f4;
+        background-color: #fff;
+        border-radius: 8px;
+        .table-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+    }
+    .dashborad-list {
+        width: calc(25% - 8px);
+        height: 420px;
+        margin-top: 16px;
+        padding: 16px;
+        box-shadow: 0 0 8px 0 #e0e6f4;
+        background-color: #fff;
+        border-radius: 8px;
+        .list-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 16px;
         }
     }
 }

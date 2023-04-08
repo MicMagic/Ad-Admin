@@ -37,6 +37,7 @@
         "no-duplicate-imports": "error",
         "quotes": ["error", "single", { "avoidEscape": true }],
         "semi": ["error","always"],
-        "@typescript-eslint/no-empty-function": "off"
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-non-null-assertion": "off"
     }
 }
