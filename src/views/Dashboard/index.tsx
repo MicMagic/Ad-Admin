@@ -1,8 +1,45 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import * as echarts from 'echarts/core';
+import { LineChart, LineSeriesOption } from 'echarts/charts';
+import { GridComponent, GridComponentOption } from 'echarts/components';
+import { LabelLayout, UniversalTransition } from 'echarts/features';
+import { CanvasRenderer } from 'echarts/renderers';
 import { Row, Col, Progress } from 'antd';
 import './index.scss';
 
+type EchartsOption = echarts.ComposeOption<GridComponentOption | LineSeriesOption>
 export default function Dashboard() {
+  // 注册组件
+  echarts.use([
+    GridComponent,
+    LineChart,
+    LabelLayout,
+    UniversalTransition,
+    CanvasRenderer
+  ]);
+  useEffect(() => {
+    const appChartDom = document.getElementById('appChart')!;
+    const appletDom = document.getElementById('appletChart')!;
+    const appChart = echarts.init(appChartDom);
+    const appletChart = echarts.init(appletDom);
+    const option: EchartsOption = {
+      xAxis: {
+        type: 'category',
+        data: [ 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun' ]
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [
+        {
+          data: [ 150, 230, 224, 218, 135, 147, 260 ],
+          type: 'line'
+        }
+      ]
+    };
+    appChart.setOption(option);
+    appletChart.setOption(option);
+  }, []);
   return (
     <div className='dashboard-wrapper'>
       <Row justify="space-between">
@@ -62,10 +99,10 @@ export default function Dashboard() {
       <div className='dashborad-chart'>
         <Row justify="space-between">
           <Col className='chart-item'>
-            <div></div>
+            <div id='appChart'></div>
           </Col>
           <Col className='chart-item'>
-            <div></div>
+            <div id='appletChart'></div>
           </Col>
         </Row>
       </div>
