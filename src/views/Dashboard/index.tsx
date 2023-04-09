@@ -233,7 +233,7 @@ export default function Dashboard() {
           <Table pagination={false} bordered={true} columns={columns} dataSource={data}/>
         </Col>
         <Col className='dashborad-list'>
-          <div className='list-title'>用户日活排行</div>
+          <div className='list-title'>用户活跃度排行</div>
           <List>
             <VirtualList
               data={listData}
