@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as echarts from 'echarts/core';
 import { LineChart, LineSeriesOption } from 'echarts/charts';
 import { GridComponent, TitleComponent, TitleComponentOption, GridComponentOption, TooltipComponent, TooltipComponentOption } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
-import { Row, Col, Progress, Table } from 'antd';
+import { Row, Col, Progress, Table, List } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
+import VirtualList from 'rc-virtual-list';
 import './index.scss';
 interface DataType {
   key: string;
@@ -13,23 +14,42 @@ interface DataType {
   age: number;
   address: string;
 }
+interface UserItem {
+  email: string;
+  gender: string;
+  name: {
+    first: string;
+    last: string;
+    title: string;
+  };
+  nat: string;
+  picture: {
+    large: string;
+    medium: string;
+    thumbnail: string;
+  };
+}
 
 type EchartsOption = echarts.ComposeOption<TitleComponentOption | GridComponentOption | LineSeriesOption | TooltipComponentOption>
 export default function Dashboard() {
+  const [ listData, setListData ] = useState<UserItem[]>([]);
+  const fakeDataUrl =
+  'https://randomuser.me/api/?results=20&inc=name,gender,email,nat,picture&noinfo';
+  const ContainerHeight = 400;
   // 表格表头
   const columns: ColumnsType<DataType> = [
     {
-      title: 'Name',
+      title: '应用名称',
       dataIndex: 'name',
       key: 'name',
     },
     {
-      title: 'Age',
+      title: '年龄',
       dataIndex: 'age',
       key: 'age',
     },
     {
-      title: 'Address',
+      title: '地址',
       dataIndex: 'address',
       key: 'address',
     }
@@ -65,7 +85,20 @@ export default function Dashboard() {
     TooltipComponent,
     TitleComponent
   ]);
+  const appendData = () => {
+    fetch(fakeDataUrl)
+      .then((res) => res.json())
+      .then((body) => {
+        setListData(listData.concat(body.results));
+      });
+  };
+  const onScroll = (e: React.UIEvent<HTMLElement, UIEvent>) => {
+    if (e.currentTarget.scrollHeight - e.currentTarget.scrollTop === ContainerHeight) {
+      appendData();
+    }
+  };
   useEffect(() => {
+    appendData();
     const appChartDom = document.getElementById('appChart')!;
     const appletDom = document.getElementById('appletChart')!;
     const appChart = echarts.init(appChartDom);
@@ -200,7 +233,26 @@ export default function Dashboard() {
           <Table pagination={false} bordered={true} columns={columns} dataSource={data}/>
         </Col>
         <Col className='dashborad-list'>
-          <div className='list-title'>用户画像</div>
+          <div className='list-title'>用户日活排行</div>
+          <List>
+            <VirtualList
+              data={listData}
+              height={ContainerHeight}
+              itemHeight={47}
+              itemKey="email"
+              onScroll={onScroll}
+            >
+              {(item: UserItem) => (
+                <List.Item key={item.email}>
+                  <List.Item.Meta
+                    title={`${item.name.last}/最新使用产品的时间`}
+                    description='用户IP'
+                  />
+                  <div>App/Applet(使用该产品的时间)</div>
+                </List.Item>
+              )}
+            </VirtualList>
+          </List>
         </Col>
       </Row>
     </div>
