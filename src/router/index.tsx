@@ -53,7 +53,7 @@ const routers: RouteObject[] = [
   // 重定向路由
   {
     path: '/',
-    element: <Navigate to="/homepage" />
+    element: <Navigate to="/homepage/dashboard" />
   },
 ];
 export default routers;
