@@ -1,0 +1,14 @@
+@import '../../global.scss';
+
+.bury-point-wrapper {
+    height: calc(100vh - 76px);
+    background-color: $global_background_color;
+    border-radius: 8px;
+    margin-top: 8px;
+    padding: 16px;
+    .bury-point-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
