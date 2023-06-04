@@ -14,4 +14,16 @@
     .bury-point-table {
         margin-top: 16px;
     }
+    .table-edit {
+        cursor: pointer;
+        color: #409eff;
+    }
+    .table-check {
+        cursor: pointer;
+        color:#409eff;
+    }
+    .table-delete {
+        cursor: pointer;
+        color: rgb(253, 51, 62);
+    }
 }

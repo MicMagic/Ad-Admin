@@ -106,9 +106,9 @@ const BuryPoint = (): JSX.Element => {
       fixed: 'right',
       render: (_, record) => (
         <Space>
-          <span onClick={editHandler}>编辑</span>
-          <span onClick={checkHandler}>查看</span>
-          <span onClick={deleteHanlder}>删除</span>
+          <span className='table-edit' onClick={editHandler}>编辑</span>
+          <span className='table-check' onClick={checkHandler}>查看</span>
+          <span className='table-delete' onClick={deleteHanlder}>删除</span>
         </Space>
       )
     }
