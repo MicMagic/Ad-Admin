@@ -1,0 +1,29 @@
+@import '../../global.scss';
+
+.bury-point-wrapper {
+    height: calc(100vh - 76px);
+    background-color: $global_background_color;
+    border-radius: 8px;
+    margin-top: 8px;
+    padding: 16px;
+    .bury-point-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .bury-point-table {
+        margin-top: 16px;
+    }
+    .table-edit {
+        cursor: pointer;
+        color: #409eff;
+    }
+    .table-check {
+        cursor: pointer;
+        color:#409eff;
+    }
+    .table-delete {
+        cursor: pointer;
+        color: rgb(253, 51, 62);
+    }
+}
