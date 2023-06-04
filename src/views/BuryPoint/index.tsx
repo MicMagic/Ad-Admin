@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Button, Space, Dropdown, Table, type MenuProps } from 'antd';
+import { Modal, Form, Input, Button, Space, Dropdown, Table, type MenuProps } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import SvgIcon from '@components/SvgIcon/index';
 import { observer } from 'mobx-react';
@@ -104,11 +104,11 @@ const BuryPoint = (): JSX.Element => {
       title: '操作',
       align: 'center',
       fixed: 'right',
-      render: (_, record) => (
+      render: (record) => (
         <Space>
-          <span className='table-edit' onClick={editHandler}>编辑</span>
-          <span className='table-check' onClick={checkHandler}>查看</span>
-          <span className='table-delete' onClick={deleteHanlder}>删除</span>
+          <span className='table-edit' onClick={() => editHandler(record)}>编辑</span>
+          <span className='table-check' onClick={() => checkHandler(record)}>查看</span>
+          <span className='table-delete' onClick={() => deleteHanlder(record)}>删除</span>
         </Space>
       )
     }
@@ -129,14 +129,22 @@ const BuryPoint = (): JSX.Element => {
       updateTime: '2023-06-01',
     }
   ];
-  const editHandler = () => {
-    alert('编辑');
+  const editHandler = (record: DataType) => {
+    console.warn('编辑', record);
   };
-  const checkHandler = () => {
-    alert('查看');
+  const checkHandler = (record: DataType) => {
+    console.warn('查看', record);
   };
-  const deleteHanlder = () => {
-    alert('删除');
+  const deleteHanlder = (record: DataType) => {
+    Modal.confirm({
+      title: '删除',
+      content: '确认删除?',
+      cancelText: '取消',
+      okText: '确认',
+      onOk: () => {
+        console.warn('删除', record);
+      }
+    });
   };
   return (
     <div className='bury-point-wrapper'>
