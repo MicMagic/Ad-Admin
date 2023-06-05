@@ -1,7 +1,7 @@
 @import '../../global.scss';
 
 .bury-point-wrapper {
-    height: calc(100vh - 76px);
+    height: $global_height;
     background-color: $global_background_color;
     border-radius: 8px;
     margin-top: 8px;
