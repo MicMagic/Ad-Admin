@@ -14,6 +14,10 @@ import AutoTest from '@views/AutoTest';
 const routers: RouteObject[] = [
   {
     path: '/homepage',
+    element: <Navigate to="/homepage/dashboard" />
+  },
+  {
+    path: '/homepage',
     element: <HomePage />,
     children: [
       {

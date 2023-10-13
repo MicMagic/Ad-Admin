@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Select } from 'antd';
+import { Form, Select } from 'antd';
 import './index.scss';
 
 const rankList = [
